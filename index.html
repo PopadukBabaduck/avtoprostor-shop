@@ -550,9 +550,21 @@ fbq('track', 'PageView');
     });
   });
 </script>
-       <a href="https://t.me/Tolik_tsc" target="_blank" class="telegram-float-mobile" aria-label="Написати в Telegram">
-       <i class="fa-brands fa-telegram"></i>
-       </a>
+<a href="https://t.me/Tolik_tsc" target="_blank" class="telegram-float-mobile" aria-label="Написати в Telegram">
+  <i class="fa-brands fa-telegram"></i>
+</a>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var tgBtn = document.querySelector('.telegram-float-mobile');
+    if (tgBtn) {
+      tgBtn.addEventListener('click', function() {
+        if (typeof fbq === "function") {
+          fbq('trackCustom', 'TelegramFloatClick');
+        }
+      });
+    }
+  });
+</script>
 
 
 </body>
